@@ -13,6 +13,12 @@ config_version=3
 config/name="Cubedude_Kickabout"
 config/icon="res://icon.png"
 
+[layer_names]
+
+3d_physics/layer_1="Pitch"
+3d_physics/layer_2="Players"
+3d_physics/layer_3="Ball"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
