@@ -3,8 +3,6 @@
 [ext_resource path="res://GFX/Goal.material" type="Material" id=1]
 [ext_resource path="res://GFX/Net.material" type="Material" id=2]
 
-
-
 [sub_resource type="ArrayMesh" id=1]
 
 resource_name = "Plane.001"
@@ -82,8 +80,8 @@ material/0 = null
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 5
+collision_layer = 0
+collision_mask = 4
 friction = 1.0
 bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
