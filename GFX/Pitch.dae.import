@@ -11,8 +11,8 @@ dest_files=[ "res://.import/Pitch.dae-b970d045eeaa3320df4345f320db9a54.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="MeshInstance"
+nodes/root_name="Pitch"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
