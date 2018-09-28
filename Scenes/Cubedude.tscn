@@ -8,7 +8,7 @@
 radius = 0.75
 height = 1.0
 
-[node name="Cubedude" index="0" instance=ExtResource( 1 )]
+[node name="Cubedude" instance=ExtResource( 1 )]
 
 [node name="Cube Dube" parent="Armature/Skeleton" index="0"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Spatial" index="0"]
+[node name="Game" type="Spatial"]
 
 [node name="Pitch" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -51,5 +52,9 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Shadow", "Transform" ]
+
+[node name="Ball" parent="." index="3" instance=ExtResource( 3 )]
+
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 1, 0 )
 
 
