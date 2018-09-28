@@ -23,7 +23,7 @@ surfaces/0 = {
 "vertex_count": 164
 }
 
-[node name="Pitch" index="0" instance=ExtResource( 1 )]
+[node name="Pitch" instance=ExtResource( 1 )]
 
 [node name="Adverts" parent="." index="0"]
 
