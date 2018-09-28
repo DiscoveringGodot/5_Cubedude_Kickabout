@@ -18,12 +18,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Cube Dube" parent="Armature/Skeleton" index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00442052, 0.0402538, 0.00222468 )
 material/0 = ExtResource( 3 )
-_sections_unfolded = [ "material" ]
+_sections_unfolded = [ "Transform", "Visibility", "material" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 1.23644, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
