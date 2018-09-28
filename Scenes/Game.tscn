@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Spatial"]
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 8, 5, 1 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="Game" type="Spatial" index="0"]
 
 [node name="Pitch" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -56,5 +61,87 @@ _sections_unfolded = [ "Shadow", "Transform" ]
 [node name="Ball" parent="." index="3" instance=ExtResource( 3 )]
 
 transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 1, 0 )
+
+[node name="Boundary" type="Spatial" parent="." index="4"]
+
+[node name="WallBack" type="StaticBody" parent="Boundary" index="0"]
+
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 9, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boundary/WallBack" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="WallFront" type="StaticBody" parent="Boundary" index="1"]
+
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -9, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boundary/WallFront" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="WallLeft" type="StaticBody" parent="Boundary" index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boundary/WallLeft" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="WalllRight" type="StaticBody" parent="Boundary" index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 7
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Boundary/WalllRight" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 1 )
+disabled = false
 
 
