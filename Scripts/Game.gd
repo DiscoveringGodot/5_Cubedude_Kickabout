@@ -1,13 +1,20 @@
 extends Spatial
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var Player1_score = 0
+var Player2_score = 0
+
+export var target_score = 5
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	reset_pitch()
 	pass
+
+
+func reset_pitch():
+	var Ball = get_tree().get_root().find_node("Ball", true, false)
+	var BallStart = get_tree().get_root().find_node("BallStart", true, false)
+	Ball.translation = BallStart.translation
+	get_tree().call_group("players", "reset")
 
 
 func free_players():
@@ -24,7 +31,6 @@ func _on_GoalDetector_body_entered(body, goal_id):
 	$Timer.start()
 
 
-
-
 func _on_Timer_timeout():
+	reset_pitch()
 	free_players()

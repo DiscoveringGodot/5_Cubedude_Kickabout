@@ -11,7 +11,9 @@ var can_move = true
 export var player_id = 1
 
 func _ready():
-	pass
+	if player_id== 1:
+		get_node("Armature/Skeleton/Cube Dube").set_surface_material(0,load("res://GFX/Cubedude/CubeDubePurple.material"))
+	reset()
 
 
 func _physics_process(delta):
@@ -63,3 +65,10 @@ func animate():
 
 func can_move(value):
 	can_move = value
+
+
+func reset():
+	var spawn = get_tree().get_root().find_node(("Player%sStart" % player_id), true, false)
+	
+	translation = spawn.translation
+	motion = Vector3(0,0,0)

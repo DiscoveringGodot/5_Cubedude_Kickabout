@@ -19,6 +19,10 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Transform" ]
 player_id = 1
 
+[node name="Cube Dube" parent="Armature/Skeleton" index="0"]
+
+_sections_unfolded = [ "material" ]
+
 [node name="AnimationPlayer" parent="." index="1"]
 
 playback_speed = 2.0
