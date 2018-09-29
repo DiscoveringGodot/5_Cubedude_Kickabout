@@ -9,13 +9,22 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
+func free_players():
+	get_tree().call_group("players", "can_move", true)
+
+
+func freeze_players():
+	get_tree().call_group("players", "can_move", false)
 
 
 func _on_GoalDetector_body_entered(body, goal_id):
 	print("goal in player %s's goal!" % goal_id)
+	freeze_players()
+	$Timer.start()
 
 
+
+
+func _on_Timer_timeout():
+	free_players()

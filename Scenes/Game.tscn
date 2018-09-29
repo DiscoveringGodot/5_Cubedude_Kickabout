@@ -307,10 +307,19 @@ disabled = false
 
 [node name="Cubedude" parent="." index="6" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 2.93588 )
+
+[node name="Timer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
 
 [connection signal="body_entered" from="GoalDetectors/GreenGoalDetector" to="." method="_on_GoalDetector_body_entered" binds= [ 2 ]]
 
 [connection signal="body_entered" from="GoalDetectors/PurpleGoalDetector" to="." method="_on_GoalDetector_body_entered" binds= [ 1 ]]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

@@ -7,16 +7,23 @@ const FRICTION = 0.95
 
 var motion = Vector3()
 
+var can_move = true
+
 func _ready():
 	pass
 
+
 func _physics_process(delta):
-	move()
+	if can_move:
+		move()
 	fall()
 
 
 func _process(delta):
-	animate()
+	if can_move:
+		animate()
+	else:
+		$AnimationPlayer.stop()
 	look_at(Vector3(-motion.x, 0, -motion.z)*SPEED, Vector3(0,1,0))
 
 
@@ -51,3 +58,7 @@ func animate():
 			$AnimationPlayer.play("Arms Cross Walk")
 	else:
 		$AnimationPlayer.stop()
+
+
+func can_move(value):
+	can_move = value
