@@ -13,7 +13,7 @@ dest_files=[ "res://.import/Star.obj-08c74a0821152c9f95c677741edc53a4.scn" ]
 
 nodes/root_type="MeshInstance"
 nodes/root_name="Star"
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1

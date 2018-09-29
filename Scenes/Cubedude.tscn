@@ -8,20 +8,22 @@
 radius = 0.5
 height = 1.0
 
-[node name="Cubedude" groups=[
+[node name="Cubedude" index="0" groups=[
 "players",
 ] instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 collision_layer = 2
 collision_mask = 7
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 script = ExtResource( 2 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Axis Lock", "Collision", "Transform" ]
 player_id = 1
 
 [node name="Cube Dube" parent="Armature/Skeleton" index="0"]
 
-_sections_unfolded = [ "material" ]
+_sections_unfolded = [ "Geometry", "Transform", "Visibility", "material" ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 

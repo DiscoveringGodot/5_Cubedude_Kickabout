@@ -37,11 +37,11 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Emission Shape", "Gravity", "Linear Accel", "Radial Accel", "Spread", "Trail" ]
+_sections_unfolded = [ "Angle", "Animation", "Emission Shape", "Flags", "Gravity", "Linear Accel", "Radial Accel", "Spread", "Trail" ]
 
 [node name="Particles" type="Particles"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -53,11 +53,11 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 emitting = false
 amount = 64
-lifetime = 1.0
+lifetime = 3.0
 one_shot = true
 preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
+speed_scale = 1.5
+explosiveness = 0.5
 randomness = 1.0
 fixed_fps = 0
 fract_delta = true

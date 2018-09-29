@@ -21,7 +21,7 @@ extents = Vector3( 1, 6, 12 )
 
 extents = Vector3( 1, 0.498795, 0.0376118 )
 
-[node name="Game" type="Spatial" index="0"]
+[node name="Game" type="Spatial"]
 
 script = ExtResource( 1 )
 target_score = 5
@@ -30,7 +30,7 @@ target_score = 5
 
 [node name="Camera" type="Camera" parent="." index="1"]
 
-transform = Transform( -4.35451e-008, 0.173648, -0.984808, -3.8097e-009, 0.984808, 0.173648, 1, 1.13133e-008, -4.2222e-008, -11, 4, 0 )
+transform = Transform( -4.37114e-008, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-008, -4.2222e-008, -11, 5, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = ExtResource( 3 )
@@ -38,7 +38,7 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05
@@ -322,6 +322,8 @@ autostart = false
 
 [node name="Players" type="Node" parent="." index="7"]
 
+editor/display_folded = true
+
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -333,6 +335,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
 player_id = 2
 
 [node name="SpawnLocations" type="Node" parent="." index="8"]
+
+editor/display_folded = true
 
 [node name="BallStart" type="Position3D" parent="SpawnLocations" index="0"]
 
@@ -359,13 +363,13 @@ bus = "Master"
 
 [node name="Particles1" parent="." index="10" instance=ExtResource( 7 )]
 
-transform = Transform( 0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0, -7 )
+transform = Transform( -2.18557e-008, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-008, 5, 1, -7 )
 amount = 32
 visibility_aabb = AABB( -2.25045, -1.86948, -1.06073, 4.50091, 3.73895, 2.12146 )
 
 [node name="Particles2" parent="." index="11" instance=ExtResource( 7 )]
 
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0, 0, 8 )
+transform = Transform( -2.18557e-008, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-008, 5, 1, 7 )
 amount = 32
 visibility_aabb = AABB( -2.25045, -1.86948, -1.06073, 4.50091, 3.73895, 2.12146 )
 
