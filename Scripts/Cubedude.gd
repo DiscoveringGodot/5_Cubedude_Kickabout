@@ -3,7 +3,7 @@ extends KinematicBody
 const SPEED = 8
 const GRAVITY = -5
 const EPSILON = 0.00001
-const FRICTION = 0.95
+const FRICTION = 0.99
 
 var motion = Vector3()
 var can_move = false
