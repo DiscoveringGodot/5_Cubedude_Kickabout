@@ -223,7 +223,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="7"]
 
-transform = Transform( -3.8764e-007, 0, -5.37913, 0, 1, 0, 8.86817, 0, -2.35129e-007, -0.356664, 0, 0.0896573 )
+transform = Transform( -3.8764e-007, 0, 5.37913, 0, 1, 0, -8.86817, 0, -2.35129e-007, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
