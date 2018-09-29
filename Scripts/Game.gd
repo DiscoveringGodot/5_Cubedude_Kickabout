@@ -60,3 +60,4 @@ func update_score(player):
 func end_game(player):
 	$GUI.end_game(player)
 	Ball.queue_free()
+	$AnimationPlayer.play("DimLights")

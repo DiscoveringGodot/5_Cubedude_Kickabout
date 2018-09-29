@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Xenocity - Digital Acid (HD).ogg-4c56cc5a38a3a9daa57234d2082f8696.oggstr"
+
+[deps]
+
+source_file="res://SFX/Xenocity - Digital Acid (HD).ogg"
+dest_files=[ "res://.import/Xenocity - Digital Acid (HD).ogg-4c56cc5a38a3a9daa57234d2082f8696.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
