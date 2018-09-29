@@ -116,7 +116,8 @@ material/0 = null
 
 [node name="Goal" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.544429, -0.251856, 0 )
+editor/display_folded = true
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.45, -0.251856, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -129,6 +130,7 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
+_sections_unfolded = [ "Transform" ]
 
 [node name="Net" type="MeshInstance" parent="Goal" index="0"]
 
@@ -147,7 +149,7 @@ material/0 = null
 
 [node name="Goal2" parent="." index="2" instance=ExtResource( 4 )]
 
-transform = Transform( -0.75, 0, -1.13247e-007, 0, 0.75, 0, 1.13247e-007, 0, -0.75, 0.455571, -0.251856, 0 )
+transform = Transform( -0.75, 0, -1.13247e-007, 0, 0.75, 0, 1.13247e-007, 0, -0.75, 0.4, -0.251856, 0 )
 material/0 = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "material" ]
 
