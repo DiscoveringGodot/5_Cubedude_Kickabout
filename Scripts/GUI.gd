@@ -5,3 +5,12 @@ func update_score(player, score):
 		$HBoxContainer/CenterContainer/Player1Score.text = str(score)
 	else:
 		$HBoxContainer/CenterContainer2/Player2Score.text = str(score)
+
+
+func end_game(player):
+	$Popup/CenterContainer/VictoryLabel.text = "Player " + str(player) + " wins!"
+	$Popup.popup_centered()
+	
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/Game.tscn")

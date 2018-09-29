@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=2]
@@ -22,6 +22,25 @@ extents = Vector3( 1, 6, 12 )
 
 extents = Vector3( 1, 0.498795, 0.0376118 )
 
+[sub_resource type="Animation" id=4]
+
+resource_name = "DimLights"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lights/DirectionalLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
 [node name="Game" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
@@ -31,7 +50,7 @@ target_score = 5
 
 [node name="Camera" type="Camera" parent="." index="1"]
 
-transform = Transform( -4.37114e-008, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-008, -4.2222e-008, -11, 5, 0 )
+transform = Transform( -4.37114e-008, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1, 1.49502e-008, -4.10753e-008, -8.5, 5, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = ExtResource( 3 )
@@ -369,9 +388,19 @@ directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
-_sections_unfolded = [ "Shadow", "Transform" ]
+_sections_unfolded = [ "Light", "Transform" ]
 
 [node name="GUI" parent="." index="10" instance=ExtResource( 8 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/DimLights = SubResource( 4 )
+blend_times = [  ]
 
 [connection signal="body_entered" from="GoalDetectors/GreenGoalDetector" to="." method="_on_GoalDetector_body_entered" binds= [ 2 ]]
 

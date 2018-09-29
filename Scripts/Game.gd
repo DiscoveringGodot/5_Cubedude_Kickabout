@@ -31,7 +31,8 @@ func _on_GoalDetector_body_entered(body, goal_id):
 	
 	update_score(goal_id)
 	freeze_players()
-	$Timer.start()
+	if Player1_score < target_score and Player2_score < target_score:
+		$Timer.start()
 	if goal_id == 1:
 		Particles1.emitting = true
 	else:
@@ -42,19 +43,20 @@ func _on_Timer_timeout():
 	reset_pitch()
 
 
-func update_score(goal_id):
+func update_score(player):
 	var new_score
 	
-	if goal_id == 1:
+	if player == 1:
 		Player1_score +=1
 		new_score = Player1_score
 	else:
 		Player2_score +=1
 		new_score = Player2_score
-	$GUI.update_score(goal_id, new_score)
+	$GUI.update_score(player, new_score)
 	if new_score == target_score:
-		end_game()
+		end_game(player)
 
 
-func end_game():
-	get_tree().quit()
+func end_game(player):
+	$GUI.end_game(player)
+	Ball.queue_free()
