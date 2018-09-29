@@ -6,8 +6,9 @@ const EPSILON = 0.00001
 const FRICTION = 0.95
 
 var motion = Vector3()
-
 var can_move = true
+
+export var player_id = 1
 
 func _ready():
 	pass
@@ -28,16 +29,16 @@ func _process(delta):
 
 
 func move():
-	if Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("up_%s" %player_id) and not Input.is_action_pressed("down_%s" %player_id):
 		motion.x = 1
-	elif Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("down_%s" %player_id) and not Input.is_action_pressed("up_%s" %player_id):
 		motion.x  =-1
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
 		
-	if Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("right_%s" %player_id) and not Input.is_action_pressed("left_%s" %player_id):
 		motion.z  =1
-	elif Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("left_%s" %player_id) and not Input.is_action_pressed("right_%s" %player_id):
 		motion.z = -1
 	else:
 		motion.z = lerp(motion.z, 0, FRICTION)
