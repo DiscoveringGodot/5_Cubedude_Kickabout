@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TheRush.ogg-c7b18e211d882164c6cbb8ec4336f3b7.oggstr"
+
+[deps]
+
+source_file="res://SFX/TheRush.ogg"
+dest_files=[ "res://.import/TheRush.ogg-c7b18e211d882164c6cbb8ec4336f3b7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

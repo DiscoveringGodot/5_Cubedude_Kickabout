@@ -6,7 +6,7 @@ const EPSILON = 0.00001
 const FRICTION = 0.95
 
 var motion = Vector3()
-var can_move = true
+var can_move = false
 
 export var player_id = 1
 
@@ -25,9 +25,9 @@ func _physics_process(delta):
 func _process(delta):
 	if can_move:
 		animate()
+		look_at(Vector3(-motion.x, 0, -motion.z)*SPEED, Vector3(0,1,0))
 	else:
 		$AnimationPlayer.stop()
-	look_at(Vector3(-motion.x, 0, -motion.z)*SPEED, Vector3(0,1,0))
 
 
 func move():
@@ -72,3 +72,4 @@ func reset():
 	
 	translation = spawn.translation
 	motion = Vector3(0,0,0)
+	can_move(true)

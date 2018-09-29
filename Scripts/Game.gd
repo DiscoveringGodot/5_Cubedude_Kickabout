@@ -17,10 +17,6 @@ func reset_pitch():
 	get_tree().call_group("players", "reset")
 
 
-func free_players():
-	get_tree().call_group("players", "can_move", true)
-
-
 func freeze_players():
 	get_tree().call_group("players", "can_move", false)
 
@@ -33,4 +29,3 @@ func _on_GoalDetector_body_entered(body, goal_id):
 
 func _on_Timer_timeout():
 	reset_pitch()
-	free_players()
