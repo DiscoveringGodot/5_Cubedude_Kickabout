@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://GFX/Advert.material" type="Material" id=1]
+[ext_resource path="res://GFX/Material_002.material" type="Material" id=1]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -15,7 +15,7 @@ is_hemisphere = false
 
 radius = 0.25
 
-[node name="Ball" type="RigidBody"]
+[node name="Ball" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

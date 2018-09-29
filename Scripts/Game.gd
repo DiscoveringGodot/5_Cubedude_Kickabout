@@ -25,6 +25,10 @@ func _on_GoalDetector_body_entered(body, goal_id):
 	print("goal in player %s's goal!" % goal_id)
 	freeze_players()
 	$Timer.start()
+	if goal_id == 1:
+		$Particles1.emitting = true
+	else:
+		$Particles2.emitting = true
 
 
 func _on_Timer_timeout():
