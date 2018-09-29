@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Cubedude.tscn" type="PackedScene" id=5]
 [ext_resource path="res://SFX/TheRush.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Particles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/FollowSpot.gd" type="Script" id=8]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -21,7 +22,7 @@ extents = Vector3( 1, 6, 12 )
 
 extents = Vector3( 1, 0.498795, 0.0376118 )
 
-[node name="Game" type="Spatial"]
+[node name="Game" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 target_score = 5
@@ -48,6 +49,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="2"]
 
 transform = Transform( 0.819152, 0.469846, -0.32899, 0, 0.573576, 0.819152, 0.573576, -0.67101, 0.469846, -6, 10, 12 )
+visible = false
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
@@ -322,8 +324,6 @@ autostart = false
 
 [node name="Players" type="Node" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Player1" parent="Players" index="0" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -372,6 +372,104 @@ visibility_aabb = AABB( -2.25045, -1.86948, -1.06073, 4.50091, 3.73895, 2.12146 
 transform = Transform( -2.18557e-008, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-008, 5, 1, 7 )
 amount = 32
 visibility_aabb = AABB( -2.25045, -1.86948, -1.06073, 4.50091, 3.73895, 2.12146 )
+
+[node name="Lights" type="Node" parent="." index="12"]
+
+[node name="FollowSpot" type="SpotLight" parent="Lights" index="0"]
+
+transform = Transform( 0.819152, 0.148453, -0.554032, 0, 0.965926, 0.258819, 0.573577, -0.212012, 0.79124, -7, 5, 12 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 20.0
+spot_attenuation = 1.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Light", "Spot", "Transform" ]
+
+[node name="FollowSpot2" type="SpotLight" parent="Lights" index="1"]
+
+transform = Transform( -0.766044, 0.166366, -0.620885, 0, 0.965926, 0.258819, 0.642788, 0.198267, -0.739942, -7, 5, -12 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 20.0
+spot_attenuation = 1.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Light", "Spot", "Transform" ]
+
+[node name="FollowSpot3" type="SpotLight" parent="Lights" index="2"]
+
+transform = Transform( -0.866025, -0.12941, 0.482963, 0, 0.965926, 0.258819, -0.5, 0.224144, -0.836516, 7, 5, -12 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 20.0
+spot_attenuation = 1.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Light", "Spot", "Transform" ]
+
+[node name="FollowSpot4" type="SpotLight" parent="Lights" index="3"]
+
+transform = Transform( 0.866025, -0.129409, 0.482963, 0, 0.965926, 0.258819, -0.5, -0.224144, 0.836516, 7, 5, 12 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 20.0
+spot_attenuation = 1.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Light", "Spot", "Transform" ]
 
 [connection signal="body_entered" from="GoalDetectors/GreenGoalDetector" to="." method="_on_GoalDetector_body_entered" binds= [ 2 ]]
 

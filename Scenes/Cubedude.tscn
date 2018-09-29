@@ -8,7 +8,7 @@
 radius = 0.5
 height = 1.0
 
-[node name="Cubedude" index="0" groups=[
+[node name="Cubedude" groups=[
 "players",
 ] instance=ExtResource( 1 )]
 
