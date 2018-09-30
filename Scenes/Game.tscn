@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Cubedude.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Particles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -48,7 +49,7 @@ target_score = 5
 
 [node name="Camera" type="Camera" parent="." index="0"]
 
-transform = Transform( -4.37114e-008, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1, 1.49502e-008, -4.10753e-008, -9, 5, 0 )
+transform = Transform( -4.37114e-008, 0.173648, -0.984808, 0, 0.984808, 0.173648, 1, 7.59041e-009, -4.30473e-008, -9, 4.5, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = ExtResource( 2 )
@@ -436,6 +437,11 @@ shadow_atlas_quad_0 = 2
 shadow_atlas_quad_1 = 2
 shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
+
+[node name="Background" parent="." index="12" instance=ExtResource( 8 )]
+
+transform = Transform( -3.27835e-008, -1, 0, 0.75, -4.37114e-008, 0, 0, 0, 0.75, 12, 5, 0 )
+_sections_unfolded = [ "Transform", "material" ]
 
 [connection signal="body_entered" from="GoalDetectors/GreenGoalDetector" to="." method="_on_GoalDetector_body_entered" binds= [ 2 ]]
 

@@ -1,7 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=1]
-[ext_resource path="res://Theme.theme" type="Theme" id=2]
+[ext_resource path="res://GFX/Interface/bannerHanging.png" type="Texture" id=2]
+[ext_resource path="res://Theme.theme" type="Theme" id=3]
+[ext_resource path="res://GFX/Interface/panel_woodPaperDetail.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = true
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+border_blend = false
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius" ]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -12,15 +43,38 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
+[node name="NinePatchRect" type="NinePatchRect" parent="." index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -512.0
-margin_right = 512.0
-margin_bottom = 100.0
+margin_left = -482.0
+margin_right = 482.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+_sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -4.0
+margin_right = 2.0
+margin_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 0, 100 )
@@ -30,18 +84,17 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 2 )
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Grow Direction", "Theme" ]
+_sections_unfolded = [ "Grow Direction", "Margin", "Theme" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" index="0"]
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/HBoxContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 256.0
+margin_right = 226.0
 margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -52,15 +105,15 @@ size_flags_vertical = 1
 use_top_left = false
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Player1Score" type="Label" parent="HBoxContainer/CenterContainer" index="0"]
+[node name="Player1Score" type="Label" parent="NinePatchRect/HBoxContainer/CenterContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 113.0
+margin_left = 98.0
 margin_top = 27.0
-margin_right = 143.0
+margin_right = 128.0
 margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -74,15 +127,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
-[node name="GameLabel" type="Label" parent="HBoxContainer" index="1"]
+[node name="GameLabel" type="Label" parent="NinePatchRect/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 260.0
+margin_left = 230.0
 margin_top = 27.0
-margin_right = 764.0
+margin_right = 734.0
 margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -95,15 +148,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer" index="2"]
+[node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect/HBoxContainer" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 768.0
-margin_right = 1024.0
+margin_left = 738.0
+margin_right = 964.0
 margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -114,15 +166,15 @@ size_flags_vertical = 1
 use_top_left = false
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Player2Score" type="Label" parent="HBoxContainer/CenterContainer2" index="0"]
+[node name="Player2Score" type="Label" parent="NinePatchRect/HBoxContainer/CenterContainer2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 113.0
+margin_left = 98.0
 margin_top = 27.0
-margin_right = 143.0
+margin_right = 128.0
 margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -152,11 +204,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 1
-theme = ExtResource( 2 )
+theme = ExtResource( 3 )
 popup_exclusive = false
 _sections_unfolded = [ "Rect", "Size Flags", "Theme" ]
 
-[node name="ColorRect" type="ColorRect" parent="Popup" index="0"]
+[node name="ColorRect" type="NinePatchRect" parent="Popup" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,11 +216,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 1 )
+texture = ExtResource( 4 )
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+_sections_unfolded = [ "Patch Margin" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="Popup" index="1"]
 
@@ -177,6 +234,7 @@ anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
 margin_left = -162.0
+margin_top = 20.0
 margin_right = 162.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -186,7 +244,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 1
 use_top_left = false
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Margin", "Size Flags" ]
 
 [node name="VictoryLabel" type="Label" parent="Popup/CenterContainer" index="0"]
 
@@ -202,12 +260,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Player 1 Wins"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Size Flags" ]
+_sections_unfolded = [ "Margin", "Size Flags", "custom_colors" ]
 
 [node name="Button" type="Button" parent="Popup" index="2"]
 
@@ -215,10 +274,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -137.5
-margin_top = -72.0
-margin_right = 137.5
-margin_bottom = -20.0
+margin_left = -157.0
+margin_top = -95.0
+margin_right = 163.0
+margin_bottom = -15.0
+rect_min_size = Vector2( 320, 80 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -226,14 +286,23 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Play Again"
+text = "Play Again!"
 flat = false
 align = 1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Rect", "Textures", "custom_colors", "custom_styles" ]
 
 [connection signal="pressed" from="Popup/Button" to="." method="_on_Button_pressed"]
 
