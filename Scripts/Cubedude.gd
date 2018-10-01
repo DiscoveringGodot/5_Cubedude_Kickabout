@@ -3,7 +3,6 @@ extends KinematicBody
 const SPEED = 8
 const GRAVITY = -5
 const EPSILON = 0.00001
-const FRICTION = 0.9999
 
 var motion = Vector3()
 var can_move = false
@@ -36,14 +35,14 @@ func move():
 	elif Input.is_action_pressed("down_%s" %player_id) and not Input.is_action_pressed("up_%s" %player_id):
 		motion.x  =-1
 	else:
-		motion.x = lerp(motion.x, 0, FRICTION)
+		motion.x = 0
 		
 	if Input.is_action_pressed("right_%s" %player_id) and not Input.is_action_pressed("left_%s" %player_id):
 		motion.z  =1
 	elif Input.is_action_pressed("left_%s" %player_id) and not Input.is_action_pressed("right_%s" %player_id):
 		motion.z = -1
 	else:
-		motion.z = lerp(motion.z, 0, FRICTION)
+		motion.z = 0
 
 	move_and_slide((motion.normalized() * SPEED), Vector3(0,1,0))
 
@@ -74,7 +73,6 @@ func can_move(value):
 
 func reset():
 	var spawn = get_tree().get_root().find_node(("Player%sStart" % player_id), true, false)
-	
 	translation = spawn.translation
 	motion = Vector3(0,0,0)
 	can_move(true)
