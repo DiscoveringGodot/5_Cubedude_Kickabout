@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -11,9 +11,10 @@
 [ext_resource path="res://Scenes/Adverts.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Bear.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Cube.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Cart.tscn" type="PackedScene" id=12]
-[ext_resource path="res://GFX/toys/painting.material" type="Material" id=13]
-[ext_resource path="res://SFX/airhorn.ogg" type="AudioStream" id=14]
+[ext_resource path="res://GFX/toys/cube/Blocks.material" type="Material" id=12]
+[ext_resource path="res://Scenes/Cart.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GFX/toys/painting.material" type="Material" id=14]
+[ext_resource path="res://SFX/airhorn.ogg" type="AudioStream" id=15]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -566,24 +567,27 @@ material/0 = null
 
 transform = Transform( 0.698582, 0.71553, -3.12768e-008, 0, -4.37114e-008, -1, -0.71553, 0.698582, -3.0536e-008, 3.93698, 1.0044, 11.0872 )
 
-[node name="Cube_010" parent="Decor" index="5" instance=ExtResource( 11 )]
+[node name="Block1" parent="Decor" index="5" instance=ExtResource( 11 )]
 
-transform = Transform( 0.825713, 0, -0.56409, 0, 1, 0, 0.56409, 0, 0.825713, 3.89501, 0.95, -10.4523 )
-_sections_unfolded = [ "Transform" ]
+transform = Transform( -0.173648, 0.984808, -4.30473e-008, 0, -4.37114e-008, -1, -0.984807, -0.173648, 7.5904e-009, 3.97196, 0.95, -10.0159 )
+material/0 = ExtResource( 12 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="Cube_011" parent="Decor" index="6" instance=ExtResource( 11 )]
+[node name="Block2" parent="Decor" index="6" instance=ExtResource( 11 )]
 
 transform = Transform( 0.516442, 0, -0.856322, 0, 1, 0, 0.856322, 0, 0.516442, 2.42624, 0.95, -12.2425 )
+material/0 = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cube_012" parent="Decor" index="7" instance=ExtResource( 11 )]
+[node name="Block3" parent="Decor" index="7" instance=ExtResource( 11 )]
 
-transform = Transform( -0.310053, 0, 0.950719, 0, 1, 0, -0.950719, 0, -0.310053, 3.78821, 2.95, -11.7178 )
-_sections_unfolded = [ "Transform" ]
+transform = Transform( 1.35528e-008, 0.310053, 0.950719, 1, -4.37114e-008, 4.14522e-016, 4.15572e-008, 0.950719, -0.310053, 3.22839, 2.95, -11.3223 )
+material/0 = ExtResource( 12 )
+_sections_unfolded = [ "Transform", "material" ]
 
-[node name="Cart" parent="Decor" index="8" instance=ExtResource( 12 )]
+[node name="Cart" parent="Decor" index="8" instance=ExtResource( 13 )]
 
-transform = Transform( 6.30541, 0, -3.04003, 0, 7, 0, 3.04003, 0, 6.30541, 0.0177685, 0, -10.616 )
+transform = Transform( 4.96536, 0, 4.93408, 0, 7, 0, -4.93408, 0, 4.96536, -1.24852, 0, -12.0441 )
 
 [node name="Painting" type="MeshInstance" parent="Decor" index="9"]
 
@@ -599,12 +603,12 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 8 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 13 )
+material/0 = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="13"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -618,4 +622,3 @@ bus = "Master"
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
-[editable path="Players/Player2"]
