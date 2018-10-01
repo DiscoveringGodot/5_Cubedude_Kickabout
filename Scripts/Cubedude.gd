@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const SPEED = 8
+const SPEED = 10
 const GRAVITY = -5
 const EPSILON = 0.00001
 

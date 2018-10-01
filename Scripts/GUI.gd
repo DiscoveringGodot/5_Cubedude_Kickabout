@@ -13,4 +13,4 @@ func end_game(player):
 	
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Scenes/Game.tscn")
+	get_tree().reload_current_scene()
