@@ -46,6 +46,8 @@ func _on_Timer_timeout():
 func update_score(player):
 	var new_score
 	
+	$AudioStreamPlayer.play()
+	
 	if player == 1:
 		Player1_score +=1
 		new_score = Player1_score

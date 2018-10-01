@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GFX/toys/Handwagon.DAE" type="PackedScene" id=1]
+[ext_resource path="res://GFX/toys/red.material" type="Material" id=2]
+[ext_resource path="res://GFX/toys/tin.tres" type="Material" id=3]
+
+[node name="Cart" instance=ExtResource( 1 )]
+
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MnB_HandwagonP1" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0243612, 0.164377, -0.00228754 )
+material/0 = ExtResource( 2 )
+_sections_unfolded = [ "material" ]
+
+[node name="MnB_HandwagonP2_3" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192662, 0.0719622, -0.00207349 )
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+[node name="MnB_HandwagonP4_5_16x64" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19265, 0.101595, -0.00269574 )
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+[node name="MnB_HandwagonP4_5_16x64b" parent="." index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141901, 0.101595, -0.00269574 )
+material/0 = ExtResource( 3 )
+
+[node name="MnB_HandwagonP2_3b" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141813, 0.0719622, -0.00207349 )
+material/0 = ExtResource( 3 )
+
+[node name="MnB_HandwagonP6" parent="." index="5"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199961, 0.103174, -0.00129303 )
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+[node name="MnB_HandwagonP7_16x64" parent="." index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210694, 0.21669, -0.001228 )
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+
