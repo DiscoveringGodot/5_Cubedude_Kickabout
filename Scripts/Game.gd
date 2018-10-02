@@ -16,7 +16,6 @@ func reset_pitch():
 	Ball.axis_lock_linear_x = false
 	Ball.axis_lock_linear_z = false
 	get_tree().call_group("players", "reset")
-	$Lights/SpotLight.hide()
 
 
 func freeze_players():
@@ -28,6 +27,7 @@ func _on_GoalDetector_body_entered(body, goal_id):
 	var Particles2= get_tree().get_root().find_node("Particles2", true, false)
 	var Player1 = get_tree().get_root().find_node("Player1", true, false)
 	var Player2 = get_tree().get_root().find_node("Player2", true, false)
+	var FollowSpot = get_tree().get_root().find_node("FollowSpot", true, false)
 	
 	Ball.axis_lock_linear_x = true
 	Ball.axis_lock_linear_z = true
@@ -38,17 +38,15 @@ func _on_GoalDetector_body_entered(body, goal_id):
 		$Timer.start()
 	if goal_id == 1:
 		Particles1.emitting = true
-		$Lights/SpotLight.look_at(Player1.translation, Vector3(0,1,0))
 	else:
-		$Lights/SpotLight.look_at(Player2.translation, Vector3(0,1,0))
 		Particles2.emitting = true
-	$Lights/SpotLight.show()
+	get_tree().call_group("Lighting", "goal", goal_id)
 	$AnimationPlayer.play("DimLights")
 
 
 func _on_Timer_timeout():
 	reset_pitch()
-	$Lights/DirectionalLight.light_energy = 0.5
+	get_tree().call_group("Lighting", "reset_pitch")
 
 
 func update_score(player):
