@@ -1,5 +1,6 @@
 # Discovering Godot - The Game Engine You've Been Waiting For
-##Section 5 - CubeDude Kickabout
+
+## Section 5 - CubeDude Kickabout
 
 This is GameDev.tv's guide to the free and open source Godot game engine.  Learn the free to use, free to modify, free to create engine with one of the most successful online game develeopment educational groups out there.
 
@@ -42,3 +43,13 @@ Plan out the central mechanics and feeling of our fast, silly local kickabout ga
 
 #### After watching (learning outcomes)…
 Create the project and familiarise ourselves with the assets we'll be using
+
+
+### 3 Making the Pitch
+#### In this video (objectives)…
+1 Working in 3D
+2 Creating a ``MeshInstance`` node
+3 Creating a simple material
+
+#### After watching (learning outcomes)…
+Create simple meshes and apply materials to them
