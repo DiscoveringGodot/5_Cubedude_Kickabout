@@ -32,3 +32,13 @@ Here are the lectures of the course for this section...
 
 #### After watching (learning outcomes)…
 Plan out the central mechanics and feeling of our fast, silly local kickabout game
+
+
+### 2 Installing Assets for CubeDude Kickabout
+#### In this video (objectives)…
+1 Create a new project
+2 Download and install the assets
+3 Explore the assets
+
+#### After watching (learning outcomes)…
+Create the project and familiarise ourselves with the assets we'll be using
