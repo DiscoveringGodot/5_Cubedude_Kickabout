@@ -5,3 +5,7 @@ func _ready():
 
 func reset_pitch():
 	light_energy = 0.5
+
+
+func goal(goal_id):
+	$AnimationPlayer.play("DimLights")

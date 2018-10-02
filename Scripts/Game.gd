@@ -23,25 +23,24 @@ func freeze_players():
 
 
 func _on_GoalDetector_body_entered(body, goal_id):
-	var Particles1= get_tree().get_root().find_node("Particles1", true, false)
-	var Particles2= get_tree().get_root().find_node("Particles2", true, false)
-	var Player1 = get_tree().get_root().find_node("Player1", true, false)
-	var Player2 = get_tree().get_root().find_node("Player2", true, false)
-	var FollowSpot = get_tree().get_root().find_node("FollowSpot", true, false)
-	
 	Ball.axis_lock_linear_x = true
 	Ball.axis_lock_linear_z = true
 	
 	update_score(goal_id)
 	freeze_players()
+	fire_winner_particles(goal_id)
+	get_tree().call_group("Lighting", "goal", goal_id)
+	
+
+func fire_winner_particles(goal_id):  #consider moving to Player
 	if Player1_score < target_score and Player2_score < target_score:
 		$Timer.start()
 	if goal_id == 1:
+		var Particles1= get_tree().get_root().find_node("Particles1", true, false)
 		Particles1.emitting = true
 	else:
+		var Particles2= get_tree().get_root().find_node("Particles2", true, false)
 		Particles2.emitting = true
-	get_tree().call_group("Lighting", "goal", goal_id)
-	$AnimationPlayer.play("DimLights")
 
 
 func _on_Timer_timeout():
@@ -52,8 +51,6 @@ func _on_Timer_timeout():
 func update_score(player):
 	var new_score
 	
-	$AudioStreamPlayer.play()
-	
 	if player == 1:
 		Player1_score +=1
 		new_score = Player1_score
@@ -63,9 +60,11 @@ func update_score(player):
 	$GUI.update_score(player, new_score)
 	if new_score == target_score:
 		end_game(player)
+	
+	$AudioStreamPlayer.play()
 
 
 func end_game(player):
 	$GUI.end_game(player)
 	Ball.queue_free()
-	$AnimationPlayer.play("DimLights")
+	get_tree().call_group("Lighting", "goal", player)
