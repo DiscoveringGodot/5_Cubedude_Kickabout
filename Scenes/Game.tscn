@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/Bear.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Cube.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Cart.tscn" type="PackedScene" id=15]
-[ext_resource path="res://GFX/toys/painting.material" type="Material" id=16]
+[ext_resource path="res://Models/toys/Painting/painting.material" type="Material" id=16]
 [ext_resource path="res://SFX/airhorn.ogg" type="AudioStream" id=17]
 
 [sub_resource type="BoxShape" id=1]
@@ -113,7 +113,7 @@ _sections_unfolded = [ "Albedo", "Flags", "Metallic", "Parameters", "Roughness" 
 [sub_resource type="PlaneMesh" id=7]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector2( 25, 50 )
+size = Vector2( 25, 25 )
 subdivide_width = 0
 subdivide_depth = 0
 
@@ -609,8 +609,6 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 
 [node name="Decor" type="Node" parent="." index="11"]
-
-editor/display_folded = true
 
 [node name="Background" parent="Decor" index="0" instance=ExtResource( 10 )]
 

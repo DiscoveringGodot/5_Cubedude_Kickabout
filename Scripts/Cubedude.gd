@@ -11,7 +11,7 @@ export var player_id = 1
 
 func _ready():
 	var body = get_node("Armature/Skeleton/Cube Dube")
-	var player_1_material = "res://GFX/Cubedude/CubeDubePurple.material"
+	var player_1_material = "res://Models/Cubedude/CubeDubePurple.material"
 	if player_id == 1:
 		body.set_surface_material(0,load(player_1_material))
 	reset()

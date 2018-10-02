@@ -16,5 +16,5 @@ func goal(player):
 		look_at(Player1.translation, Vector3(0,1,0))
 	else:
 		look_at(Player2.translation, Vector3(0,1,0))
-		
+
 	show()

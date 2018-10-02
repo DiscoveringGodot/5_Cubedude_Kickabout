@@ -1,8 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Material_002.material" type="Material" id=2]
+[ext_resource path="res://Models/GlowingYellow.material" type="Material" id=2]
 [ext_resource path="res://SFX/frogblock03.wav" type="AudioStream" id=3]
+
+
 
 [sub_resource type="SphereMesh" id=1]
 
