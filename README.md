@@ -63,3 +63,13 @@ Create simple meshes and apply materials to them
 
 #### After watching (learning outcomes)…
 Have basic physics working in our game!
+
+
+### 5 Enter the CubeDude!
+#### In this video (objectives)…
+1 Changing the root node in an imported asset
+2 Why 3D objects sometimes have blank materials
+3 Moving in 3D
+
+#### After watching (learning outcomes)…
+Bring in CubeDude and apply basic 3D movement
