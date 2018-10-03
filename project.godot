@@ -11,4 +11,11 @@ config_version=3
 [application]
 
 config/name="4_CubeDude_Kickabout"
+run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+3d_physics/layer_1="Pitch"
+3d_physics/layer_2="Ball"
+3d_physics/layer_3="Players"

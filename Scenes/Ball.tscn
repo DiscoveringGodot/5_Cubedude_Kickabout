@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GFX/Ball.material" type="Material" id=1]
 
@@ -12,7 +12,40 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[node name="Ball" type="MeshInstance"]
+[sub_resource type="SphereShape" id=2]
+
+radius = 0.25
+
+[node name="Ball" type="RigidBody" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 2
+collision_mask = 5
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
 layers = 1
 material_override = null
@@ -26,5 +59,10 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+shape = SubResource( 2 )
+disabled = false
 
 

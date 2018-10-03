@@ -53,3 +53,13 @@ Create the project and familiarise ourselves with the assets we'll be using
 
 #### After watching (learning outcomes)…
 Create simple meshes and apply materials to them
+
+
+### 4 PhysicsBody Nodes in 3D
+#### In this video (objectives)…
+1 How to change a root node in a scene without losing all the work you've done
+2 Revisiting the three (?) types of ``PhysicsBody`` in Godot
+3 How to pick the right ``PhysicsBody`` for your node
+
+#### After watching (learning outcomes)…
+Have basic physics working in our game!
