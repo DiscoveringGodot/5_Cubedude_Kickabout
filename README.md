@@ -93,3 +93,13 @@ Finish building the pitch using automatically generated collision meshes
 
 #### After watching (learning outcomes)…
 Learn the basics of 3D lighting
+
+
+### 8 Better CubeDude Movement
+#### In this video (objectives)…
+1 Animate CubeDude
+2 Have CubeDude face forwards
+3 Make sure diagonal movement isn't faster than cardinal movement
+
+#### After watching (learning outcomes)…
+Make CubeDude move in a more natural and predictable way
