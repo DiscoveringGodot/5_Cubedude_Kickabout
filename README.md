@@ -73,3 +73,13 @@ Have basic physics working in our game!
 
 #### After watching (learning outcomes)…
 Bring in CubeDude and apply basic 3D movement
+
+
+### 6 Finishing the Pitch
+#### In this video (objectives)…
+1 Generating Convex and Trimesh Collision meshes
+2 Duplicating materials
+3 Applying Emmision to a material
+
+#### After watching (learning outcomes)…
+Finish building the pitch using automatically generated collision meshes

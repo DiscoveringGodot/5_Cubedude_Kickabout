@@ -16,7 +16,7 @@ is_hemisphere = false
 
 radius = 0.25
 
-[node name="Ball" type="RigidBody" index="0"]
+[node name="Ball" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
