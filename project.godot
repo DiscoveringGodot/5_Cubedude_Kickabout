@@ -19,3 +19,7 @@ config/icon="res://icon.png"
 3d_physics/layer_1="Pitch"
 3d_physics/layer_2="Ball"
 3d_physics/layer_3="Players"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

@@ -83,3 +83,13 @@ Bring in CubeDude and apply basic 3D movement
 
 #### After watching (learning outcomes)…
 Finish building the pitch using automatically generated collision meshes
+
+
+### 7 WorldEnvironment and DirectionalLight
+#### In this video (objectives)…
+1 Set up a WorldEnvironment
+2 Set up a DirectionalLight
+3 Applying toon shading
+
+#### After watching (learning outcomes)…
+Learn the basics of 3D lighting
