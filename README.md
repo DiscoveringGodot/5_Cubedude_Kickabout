@@ -112,3 +112,12 @@ Make CubeDude move in a more natural and predictable way
 
 #### After watching (learning outcomes)…
 Concatenate strings to have local multiplayer controls in a single script
+
+
+### 10 Functional Goals
+#### In this video (objectives)…
+1 Detect when a goal is scored
+2 Report which player's score has to increase
+
+#### After watching (learning outcomes)…
+Using Area nodes with custom bindings to detect goals being scored
