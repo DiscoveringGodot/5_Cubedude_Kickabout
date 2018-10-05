@@ -103,3 +103,12 @@ Learn the basics of 3D lighting
 
 #### After watching (learning outcomes)…
 Make CubeDude move in a more natural and predictable way
+
+
+### 9 Player 2 Has Joined The Game
+#### In this video (objectives)…
+1 Instance Player 2 into the game
+2 Have both players controlled in one script
+
+#### After watching (learning outcomes)…
+Concatenate strings to have local multiplayer controls in a single script

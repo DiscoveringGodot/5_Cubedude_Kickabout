@@ -2,6 +2,7 @@ extends KinematicBody
 
 var motion = Vector3()
 
+export var player_id = 1
 export var speed = 10
 
 const UP = Vector3(0,1,0)
@@ -19,16 +20,16 @@ func _process(delta):
 
 
 func move():
-	if Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("up_%s" % player_id) and not Input.is_action_pressed("down_%s" % player_id):
 		motion.z = -1
-	elif Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("down_%s" % player_id) and not Input.is_action_pressed("up_%s" % player_id):
 		motion.z = 1
 	else: 
 		motion.z = 0
 		
-	if Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("left_%s" % player_id) and not Input.is_action_pressed("right_%s" % player_id):
 		motion.x = -1
-	elif Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("right_%s" % player_id) and not Input.is_action_pressed("left_%s" % player_id):
 		motion.x = 1
 	else: 
 		motion.x = 0
