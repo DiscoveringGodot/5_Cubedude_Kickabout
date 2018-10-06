@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Models/Cubedude/CubeDubeBlue.material" type="Material" id=6]
 [ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Models/Goal/GoalBlue.material" type="Material" id=8]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -33,7 +34,7 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 5, 8, 1, 5, -8, 1, 5, 8, -1, 5, -8, -1, -5, 8, 1, -5, -8, 1, -5, 8, -1, -5, -8, 1, 5, 8, -1, 5, -8, 1, 5, -8, -1, 5, 8, 1, -5, 8, -1, -5, -8, 1, -5, -8, -1, -5, 8, 1, 5, 8, -1, -5, 8, -1, 5, 8, 1, -5, 8, 1, 5, -8, -1, -5, -8, -1, 5, -8, 1, -5, -8 )
 
-[node name="Game" type="Spatial" index="0"]
+[node name="Game" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -421,6 +422,8 @@ autostart = false
 
 [node name="StartPositions" type="Node" parent="." index="8"]
 
+editor/display_folded = true
+
 [node name="BallSpawn" type="Position3D" parent="StartPositions" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07115, 0 )
@@ -434,6 +437,8 @@ _sections_unfolded = [ "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="GUI" parent="." index="9" instance=ExtResource( 9 )]
 
 [connection signal="body_entered" from="Goals/Goal1/GoalDetection" to="." method="_on_GoalDetection_body_entered" binds= [ 2 ]]
 

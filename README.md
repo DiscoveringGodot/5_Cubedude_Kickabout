@@ -130,3 +130,11 @@ Using Area nodes with custom bindings to detect goals being scored
 
 #### After watching (learning outcomes)…
 Using Axis Lock to immobilise objects
+
+
+### 12 Adding a GUI - 2D in 3D
+#### In this video (objectives)…
+1 Add a GUI to our game
+
+#### After watching (learning outcomes)…
+How to use 2D nodes in 3D
