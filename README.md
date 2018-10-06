@@ -121,3 +121,12 @@ Concatenate strings to have local multiplayer controls in a single script
 
 #### After watching (learning outcomes)…
 Using Area nodes with custom bindings to detect goals being scored
+
+
+### 11 Resetting the Game
+#### In this video (objectives)…
+1 Freeze the ball and players when a goal is scored
+2 Reset the ball and player positions after some time has passed
+
+#### After watching (learning outcomes)…
+Using Axis Lock to immobilise objects

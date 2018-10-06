@@ -51,7 +51,7 @@ data = PoolVector3Array( -2.002, -0.0156, -0.1087, -2.002, -0.0156, 0.0669, -1.8
 
 [sub_resource type="BoxShape" id=5]
 
-extents = Vector3( 2, 0.75, 0.2 )
+extents = Vector3( 1.75, 0.7, 0.2 )
 
 [node name="Goal" type="StaticBody"]
 
@@ -154,7 +154,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="GoalDetection" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.125 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.125 )
 shape = SubResource( 5 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
