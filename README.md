@@ -147,3 +147,12 @@ How to use 2D nodes in 3D
 
 #### After watching (learning outcomes)…
 Pass arguments as functions between scripts to track who scored and who won
+
+
+### 14 Adding Awesome - Set Dressing
+#### In this video (objectives)…
+1 Enhance the Player Experience with background details
+2 Adjust materials and the environment
+
+#### After watching (learning outcomes)…
+Enhance the game with set dressing

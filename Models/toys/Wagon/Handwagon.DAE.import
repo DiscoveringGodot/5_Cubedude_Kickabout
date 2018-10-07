@@ -13,7 +13,7 @@ dest_files=[ "res://.import/Handwagon.DAE-fcf672d115c85a360552d365d8e9de1e.scn" 
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
-nodes/root_scale=1.0
+nodes/root_scale=5.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1

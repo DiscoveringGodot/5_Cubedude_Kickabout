@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pitch.tscn" type="PackedScene" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Models/Goal/GoalBlue.material" type="Material" id=8]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Wagon.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/floor.material" type="Material" id=11]
+[ext_resource path="res://Scenes/BackWall.material" type="Material" id=12]
+[ext_resource path="res://Scenes/SkirtingBoard.material" type="Material" id=13]
+[ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Advert.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Bear.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GFX/Picture.material" type="Material" id=17]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -34,7 +42,36 @@ subdivide_depth = 0
 
 points = PoolVector3Array( -1, 5, 8, 1, 5, -8, 1, 5, 8, -1, 5, -8, -1, -5, 8, 1, -5, -8, 1, -5, 8, -1, -5, -8, 1, 5, 8, -1, 5, -8, 1, 5, -8, -1, 5, 8, 1, -5, 8, -1, -5, -8, 1, -5, -8, -1, -5, 8, 1, 5, 8, -1, -5, 8, -1, 5, 8, 1, -5, 8, 1, 5, -8, -1, -5, -8, -1, 5, -8, 1, -5, -8 )
 
-[node name="Game" type="Spatial"]
+[sub_resource type="PlaneMesh" id=5]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 100, 100 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[sub_resource type="PlaneMesh" id=6]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 75, 50 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[sub_resource type="CubeMesh" id=7]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="PlaneMesh" id=8]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 7, 9 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[node name="Game" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 maximum_score = 2
@@ -51,7 +88,7 @@ _sections_unfolded = [ "Axis Lock", "Collision", "Transform" ]
 
 [node name="Camera" type="Camera" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 5, 14 )
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 7, 13.5 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = ExtResource( 4 )
@@ -440,6 +477,106 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17288, 2, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" parent="." index="9" instance=ExtResource( 9 )]
+
+[node name="Decor" type="Node" parent="." index="10"]
+
+[node name="Wagon" parent="Decor" index="0" instance=ExtResource( 10 )]
+
+transform = Transform( -2.96425, 0, -4.02657, 0, 5, 0, 4.02657, 0, -2.96425, -13.2167, 0, 1.59669 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Floor" type="MeshInstance" parent="Decor" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0538869, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 11 )
+_sections_unfolded = [ "material" ]
+
+[node name="BackWall" type="MeshInstance" parent="Decor" index="2"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0.844755, -12 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 12 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="SkirtingBoard" type="MeshInstance" parent="Decor" index="3"]
+
+transform = Transform( 35.6927, 0, 0, 0, 1, 0, 0, 0, 2.30157, 0, 0.946675, -10.5033 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 7 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 13 )
+_sections_unfolded = [ "material" ]
+
+[node name="Block" parent="Decor" index="4" instance=ExtResource( 14 )]
+
+transform = Transform( -0.978552, -0.206002, 9.00462e-009, 0, -4.37114e-008, -1, 0.206002, -0.978552, 4.27738e-008, -12.6067, 1.0545, -5.16698 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Block2" parent="Decor" index="5" instance=ExtResource( 14 )]
+
+transform = Transform( 0.880579, 0, 0.4739, 0, 1, 0, -0.4739, 0, 0.880579, -14.852, 1.0545, -4.24528 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Block3" parent="Decor" index="6" instance=ExtResource( 14 )]
+
+transform = Transform( 4.51747e-008, 0.940712, -0.339206, 1, -4.37114e-008, 1.19539e-008, -3.58196e-009, -0.339206, -0.940712, -13.6806, 3.11967, -4.62427 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Advert" parent="Decor" index="7" instance=ExtResource( 15 )]
+
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.93362, -9.06757 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Bear" parent="Decor" index="8" instance=ExtResource( 16 )]
+
+transform = Transform( -1.76449, 0, 0.941579, 0, 2, 0, -0.941579, 0, -1.76449, 15.0119, -0.368793, -5.68994 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Picture" type="MeshInstance" parent="Decor" index="9"]
+
+transform = Transform( -1, -8.74228e-008, 4.37114e-008, 4.37114e-008, 1.91069e-015, 1, -8.74228e-008, 1, 1.91069e-015, -7.65647, 7.07717, -11.8336 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 8 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 17 )
+_sections_unfolded = [ "Transform", "material" ]
 
 [connection signal="body_entered" from="Goals/Goal1/GoalDetection" to="." method="_on_GoalDetection_body_entered" binds= [ 2 ]]
 
