@@ -1,11 +1,13 @@
 extends CanvasLayer
 
-
 func update_score(player, score):
-	if player == 1:
-		$NinePatchRect/HBoxContainer/CenterContainer1/Player1Score.text = str(score)
-	else:
-		$NinePatchRect/HBoxContainer/CenterContainer2/Player2Score.text = str(score)
+	var score_label = get_node("Banner/HBoxContainer/Player%sScore" % player)
+	score_label.text = str(score)
 
-func game_over():
-	pass
+func game_over(player):
+	var label = $Popup/NinePatchRect/VBoxContainer/Label
+	label.text = ("Player " + str(player) + " wins!")
+	$Popup.popup_centered()
+
+func _on_Button_pressed():
+	get_parent().restart_game()

@@ -138,3 +138,12 @@ Using Axis Lock to immobilise objects
 
 #### After watching (learning outcomes)…
 How to use 2D nodes in 3D
+
+
+### 13 Knowing the Score - Connecting the GUI
+#### In this video (objectives)…
+1 Wire the GUI
+2 Get our game to the standard of a Minimum Viable Product
+
+#### After watching (learning outcomes)…
+Pass arguments as functions between scripts to track who scored and who won
