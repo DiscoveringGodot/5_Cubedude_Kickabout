@@ -69,7 +69,10 @@ func can_move(value):
 	can_move = value
 	
 	
-	
+func goal_scored(player):
+	if player == player_id:
+		$Particles.emitting = true
+	can_move(false)
 	
 	
 	

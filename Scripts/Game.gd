@@ -17,7 +17,7 @@ func reset_pitch():
 	Ball.axis_lock_linear_x = false
 	Ball.axis_lock_linear_y = false
 	Ball.axis_lock_linear_z = false
-	get_tree().call_group("player", "reset")
+	get_tree().call_group("celebrant", "reset")
 
 
 
@@ -25,7 +25,9 @@ func _on_GoalDetection_body_entered(body, goal_id):
 	Ball.axis_lock_linear_x = true
 	Ball.axis_lock_linear_y = true
 	Ball.axis_lock_linear_z = true
-	get_tree().call_group("player", "can_move", false)
+	
+	get_tree().call_group("celebrant", "goal_scored", goal_id)
+	
 	update_score(goal_id)
 	$Timer.start()
 	if not $Airhorn.is_playing():

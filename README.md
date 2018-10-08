@@ -166,3 +166,13 @@ Enhance the game with set dressing
 
 #### After watching (learning outcomes)…
 Check for Node types in script and give the player feedback as audio
+
+
+### 16 Adding Awesome - Visuals Effects
+#### In this video (objectives)…
+1 Add 3D particles when a goal is scored
+2 Dim the lights a goal is scored
+3 Bring up a spotlight aimed at the player that's just scored when a goal happens
+
+#### After watching (learning outcomes)…
+Introducing 3D particles and using ``look_at()`` on lights
