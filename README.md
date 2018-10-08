@@ -156,3 +156,13 @@ Pass arguments as functions between scripts to track who scored and who won
 
 #### After watching (learning outcomes)…
 Enhance the game with set dressing
+
+
+### 15 Adding Awesome - Audio
+#### In this video (objectives)…
+1 Play background music
+2 Play a sound effect when a player kicks the ball
+3 play a sound effect when a goal is scored
+
+#### After watching (learning outcomes)…
+Check for Node types in script and give the player feedback as audio
